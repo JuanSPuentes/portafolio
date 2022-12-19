@@ -18,9 +18,9 @@ services:
       - database
   
   frontend:
-    build: ./frontend
+    build: ./backend/frontend
     volumes:
-      - ./frontend:/app
+      - ./backend/frontend:/app
     depends_on:
       - backend
     ports:
