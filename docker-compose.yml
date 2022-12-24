@@ -20,7 +20,7 @@ services:
   frontend:
     build: ./backend/frontend
     volumes:
-      - ./backend/frontend:/app
+      - ./frontend:/app
     depends_on:
       - backend
     ports:

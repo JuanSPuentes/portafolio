@@ -6,6 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #urls api
+    path('api/portafolio/', include('apps.portafolio.urls')),
 ]
 
 #conexion de react

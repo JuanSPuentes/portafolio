@@ -27,7 +27,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 PROJECT_APPS = [
-    'backend',
+    'apps.portafolio',
 ]
 
 THIRD_PARTY_APPS = [

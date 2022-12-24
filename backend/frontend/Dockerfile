@@ -6,7 +6,7 @@ RUN npm install
 
 ENV PATH="./node_modules/.bin:$PATH"
 
-RUN npm run build
+RUN . ./ npm run build
 
 FROM nginx:1.23.3-alpine
 RUN apk --no-cache add curl
