@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-
 import HeroImage from "assets/me.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";

@@ -1,7 +1,5 @@
-from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.response import Response
-from rest_framework import status, permissions
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 #Modelos
 from .models import Portafolio, Tag
@@ -12,10 +10,10 @@ from .pagination import StandardResultsSetPagination
 class ProjectListView(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Portafolio.postobjects.all().order_by('-published')
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    authentication_classes = (SessionAuthentication, BasicAuthentication, TokenAuthentication)
     serializer_class = PortafolioSerializer
     pagination_class = StandardResultsSetPagination
-    lookup_fields = ['name', 'id']
+
 
 
 

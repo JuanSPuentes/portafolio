@@ -17,7 +17,6 @@ export const get_project_list = () => async dispatch => {
 
     try{
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/portafolio`,config);
-        console.log(res.data);
         if (res.status === 200) {
             dispatch({
                 type: GET_PROJECT_LIST_SUCCESS,

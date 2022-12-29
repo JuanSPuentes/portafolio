@@ -8,7 +8,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['tag_uuid', 'tag']
 
 class PortafolioSerializer(serializers.ModelSerializer):
-
+    tag = TagSerializer(many=True, read_only=True)
     class Meta:
         model = Portafolio
         fields = ['portafolio_uuid',
