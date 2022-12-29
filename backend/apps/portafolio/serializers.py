@@ -8,15 +8,13 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['tag_uuid', 'tag']
 
 class PortafolioSerializer(serializers.ModelSerializer):
-    thumbnail = serializers.CharField(source = 'get_thumbnail')
-    tag = TagSerializer(many=True)
 
     class Meta:
         model = Portafolio
         fields = ['portafolio_uuid',
                 'title', 
                 'description', 
-                'thumbnail',
+                'urlthumbnail',
                 'tag', 
                 'urlgit',
                 'url',

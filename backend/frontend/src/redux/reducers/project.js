@@ -1,8 +1,8 @@
 import {
     GET_PROJECT_LIST_SUCCESS,
     GET_PROJECT_LIST_FAIL,
-    GET_PROJECT_PAGINATION_RESULTS_SUCCESS,
-    GET_PROJECT_PAGINATION_RESULTS_FAIL,
+/*     GET_PROJECT_PAGINATION_RESULTS_SUCCESS,
+    GET_PROJECT_PAGINATION_RESULTS_FAIL, */
 }from '../actions/types';
 
 const initialState = {
@@ -14,14 +14,13 @@ const initialState = {
     previous: null
 };
 
-export default function blog(state = initialState, action) {
+export default function project(state = initialState, action) {
     const { type, payload } = action;
-
     switch(type) {
         case GET_PROJECT_LIST_SUCCESS:
             return {
                 ...state,
-                blog_list: payload.results.project,
+                project_list: payload.results,
                 count: payload.count,
                 next: payload.next,
                 previous: payload.previous,
@@ -29,7 +28,7 @@ export default function blog(state = initialState, action) {
         case GET_PROJECT_LIST_FAIL:
             return {
                 ...state,
-                blog_list: null,
+                project_list: null,
                 count: null,
                 next: null,
                 previous: null,

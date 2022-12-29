@@ -1,15 +1,21 @@
 import { connect } from "react-redux";
-import FullWidthLayout from "hocs/layouts/FullWidthLayout";
-import HeroImage from "assets/heroImage.png";
+
+import HeroImage from "assets/me.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 
 function Home() {
+    const user = [{
+        id: 1,
+        title: "Hola, mi nombre es:",
+        name: "Sebastian Puentes",
+        description: 'Soy un ingeniero de software con conocimientos en desarrollo de aplicaciones backend usando el framework Django'
+    }]
+
 
     return (
-        <FullWidthLayout>
             <div
-                name="home"
+                name="Inicio"
                 className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 home"
             >
                 <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
@@ -21,14 +27,21 @@ function Home() {
                         />
                     </div>
                     <div className="flex flex-col justify-center h-full">
-                        <h2 className="text-4xl sm:text-7xl font-bold text-white">
-                            I'm a Full Stack Web Developer
-                        </h2>
-                        <p className="text-gray-500 py-4 max-w-md">
-                            I have 2 years of experience building websites and desgining software.
-                            I love to work on web application using technologies like
-                            React, Tailwind, Next JS and GraphQL.
-                        </p>
+                        {user.map(({ id, title, name, description }) => (
+                            <div key={id}>
+                                <p className="sm:text-sm text-xs font-bold text-white">
+                                    {title}
+                                </p>
+                                <p className="sm:text-5xl text-2xl font-bold text-white">
+                                    {name}
+                                </p>
+                                <p className="text-gray-500 py-4 max-w-md">
+                                    {description}
+                                </p>
+                            </div>
+
+                        ))}
+
 
                         <div className="portfolio-btn">
                             <Link
@@ -54,7 +67,6 @@ function Home() {
 
                 </div>
             </div>
-        </FullWidthLayout>
     )
 }
 

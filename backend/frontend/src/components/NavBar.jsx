@@ -1,45 +1,48 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
 
+  const user = [{
+    id:1,
+    name : 'Sebastian Puentes'
+  }]
+  
   const links = [
     {
       id: 1,
-      link: "home",
+      link: "Inicio",
     },
     {
       id: 2,
-      link: "about",
+      link: "Sobre Mi",
     },
     {
       id: 3,
-      link: "portfolio",
+      link: "Portfolio",
     },
     {
       id: 4,
-      link: "experience",
+      link: "Experiencia",
     },
-    {
-      id: 5,
-      link: "contact",
-    },
+
   ];
 
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed nav">
       <div>
-        {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="https://rahulkarda.netlify.app">Rahul</a></h1> */}
-        <h1 className="text-5xl font-signature ml-2"><a className="link-underline link-underline-black" href="https://rahulkarda.netlify.app" target="_blank" rel="noreferrer">Rahul</a></h1>
+        {user.map(({id,name})=>(
+          <h1 key = {id} className="text-5xl font-signature ml-2"><a className="text-purple-800 hover:scale-90 hover:text-white duration-200" href="/" target="_blank" rel="noreferrer">{name}</a></h1>
+        ))}
       </div>
 
       <ul className="hidden md:flex">
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
+            className="nav-links px-4 cursor-pointer capitalize font-medium text-purple-800  hover:scale-105 hover:text-white duration-200"
           >
             <Link to={link} smooth duration={500}>
               {link}

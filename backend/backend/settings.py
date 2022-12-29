@@ -50,15 +50,17 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
+    
 
 ]
+
 
 ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
@@ -94,14 +96,15 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 if DEBUG:
     CORS_ORIGIN_WHITELIST = [
-        'http://localhost:80',
+        'http://localhost:3000',
         'http://localhost:8000',
     ]
 
     CSRF_TRUSTED_ORIGINS = [
-        'http://localhost:80',
+        'http://localhost:3000',
         'http://localhost:8000',
     ]
+
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -146,7 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 16,

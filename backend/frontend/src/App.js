@@ -1,8 +1,7 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Error404 from "containers/errors/Error404"
-import Home from 'containers/pages/Home';
-
+import Portfolio from 'components/Portfolio';
 import store from './store';
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
           <Route path="*" element={<Error404/>}/>
 
           {/* Home Display */}
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Portfolio/>}/>
         </Routes>
       </Router>
     </Provider>

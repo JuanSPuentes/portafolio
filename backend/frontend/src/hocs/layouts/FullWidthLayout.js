@@ -1,22 +1,19 @@
-import React from "react"
 import { connect } from "react-redux"
 import About from "components/About"
-import Contact from "components/Contact"
 import Experience from "components/Experience"
 import Footer from "components/Footer"
 import NavBar from "components/NavBar"
-import Portfolio from "components/Portfolio"
 import SocialLinks from "components/SocialLinks"
+import Home from "containers/pages/Home"
 
 const FullWidthLayout = ({ children }) => {
     return (
         <>
             <NavBar />
-            {children}
+            <Home/>
             <About/>
-            <Portfolio />
+            {children}
             <Experience />
-            <Contact />
             <Footer />
             <SocialLinks />
         </>

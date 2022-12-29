@@ -29,7 +29,7 @@ class Portafolio(models.Model):
     portafolio_uuid = models.UUIDField(default=uuid.uuid4, unique=True)
     title = models.CharField(verbose_name='Title Project', max_length=100)
     description = models.TextField(verbose_name='Description Project', max_length=250)
-    thumbnail = models.ImageField(verbose_name='Image Project', upload_to=portafolio_directory_path, blank=True, null=True)
+    urlthumbnail = models.URLField(verbose_name='Image Project', max_length=100, blank=True, null=True)
     tag = models.ManyToManyField(Tag, verbose_name="Tags Project")
     urlgit = models.URLField(verbose_name='Url Github', max_length=100, blank=True, null=True)
     url = models.URLField(verbose_name='Url Web Site', max_length=100, blank=True, null=True)
@@ -46,7 +46,3 @@ class Portafolio(models.Model):
         return self.title
 
 
-    def get_thumbnail(self):
-        if self.thumbnail:
-            return self.thumbnail.url
-        return  ''

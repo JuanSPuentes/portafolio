@@ -1,7 +1,8 @@
-from django.urls import path
 from .views import ProjectListView
+from rest_framework import routers
 
+router = routers.DefaultRouter()
 
-urlpatterns = [
-    path('', ProjectListView.as_view(), name='ListProject'),
-]
+router.register('', ProjectListView, 'digimons')
+
+urlpatterns = router.urls
