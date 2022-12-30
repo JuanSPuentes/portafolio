@@ -1,6 +1,8 @@
 # Bienvenido al repositorio de portafolio 
 
 Este repositorio contiene el código fuente y los archivos necesarios para el proyecto de portafolio Web.
+## El front fue tomado de 
+https://github.com/rahulkarda/react-portfolio
 
 ## Instrucciones de instalación
 Para obtener una copia local del proyecto, sigue estos pasos:
