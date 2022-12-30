@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Bienvenido al repositorio de portafolio 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositorio contiene el código fuente y los archivos necesarios para el proyecto de portafolio Web.
 
-## Available Scripts
+## Instrucciones de instalación
+Para obtener una copia local del proyecto, sigue estos pasos:
 
-In the project directory, you can run:
+Abre tu terminal y navega a la carpeta en la que quieres almacenar el proyecto.
 
-### `npm start`
+Ejecuta el siguiente comando para clonar el repositorio:
+```bash
+git clone https://github.com/JuanSPuentes/portafolio.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Una vez que se complete el proceso de clonación, entra en la carpeta del proyecto con el siguiente comando:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+cd portafolio
+```
 
-### `npm test`
+## Instala las dependencias necesarias para React con el siguiente comando:
+```bash
+npm install
+```
+## Instala las dependencias necesarias para Python
+```bash
+pip install -r requirements.txt
+```
+## Importante las varialbes de entorno 
+Es necesario declara dos .env
+1. .env de python debe ir en la carpeta de backend y contener lo siguiente 
+- SECRET_KEY=[YOUR SECRET KEY]
+- URI=[URI] esta puede no ser necesaria si no se necesita hacer los cambios en el settings.py
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. .env de react debe ir en la raiz del proyecto y declara lo siguiente
+- REACT_APP_API_URL='http://127.0.0.1:8000' url de la api a consumir
+- PORT=80
 
-### `npm run build`
+Ejecución del proyecto
+Para ejecutar el proyecto, sigue estos pasos:
+Asegúrate de que estás en la carpeta del proyecto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ejecuta el siguiente comando para iniciar el servidor del frontend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm start
+```
+Ejecuta el siguiente comando para iniciar el servidor del backend:
+```bash
+python manage.py runserver
+```
 
-### `npm run eject`
+Abre tu navegador web y navega a la dirección http://localhost:3000  y  http://localhost:8000 para ver el proyecto en funcionamiento.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Contribuyendo al proyecto
+Si deseas contribuir al proyecto, sigue estos pasos:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Haz un fork del repositorio.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Crea una rama para tu contribución.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Haz tus cambios y commit con un mensaje de commit claro y conciso.
 
-## Learn More
+Haz un pull request a la rama principal del repositorio.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -36,10 +36,10 @@ function Portfolio ({get_project_list, project_list}) {
                     alt="projects"
                     className="rounded-md duration-200 hover:scale-105"
                   />
-                  <div className="grid grid-cols-3 sm:grid-cols-3">
+                  <div className="grid grid-cols-3 sm:grid-cols-3 ">
                   {
                   tag.map(({tag_uuid, tag})=>(
-                      <p key={tag_uuid} className="">{tag}</p> 
+                      <p key={tag_uuid} className="m-1 text-xs text-red-500">{tag}</p> 
                   ))
                   }
                   </div>
