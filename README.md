@@ -44,7 +44,7 @@ Asegúrate de que estás en la carpeta del proyecto.
 
 Ejecuta el siguiente comando para iniciar el servidor del frontend:
 
-
+```bash
 npm start
 ```
 Ejecuta el siguiente comando para iniciar el servidor del backend:
